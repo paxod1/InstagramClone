@@ -8,7 +8,11 @@ const { Server } = require('socket.io');
 const Message = require('./Models/Message.js');
 
 dotenv.config();
-app.use(cors());
+app.use(cors({
+    origin:[""],
+    methods:["POST","GET"],
+    credentials:true
+}));
 app.use(express.json());
 
 const UserRouter = require('./routers/UserRouter');
